@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   resources :chart_data, only: [:index]
 
+  root "chart_data#index"
 end
