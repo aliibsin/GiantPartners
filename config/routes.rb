@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   resources :chart_data, only: [:index]
 
+  get 'chart_data/fetchInfo', :to => 'chart_data#fetchInfo'
+
   root "chart_data#index"
 end
