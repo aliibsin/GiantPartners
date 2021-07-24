@@ -1,6 +1,18 @@
 window.addEventListener("load", () => {
 
   let chart = Chartkick.charts["chart-1"];
+  let titles = {"fname": "First Name", 
+                "mname": "Middle Name",
+                "lname": "Last Name",
+                "prefix": "Prefix",
+                "address1": "Address 1",
+                "address2": "Address 2",
+                "city": "City",
+                "state": "State",
+                "zip": "Zip",
+                "education": "Education",
+                "income": "Income"
+              }
 
   const links = document.querySelectorAll(
     "a[data-chart-type]"
@@ -11,6 +23,7 @@ window.addEventListener("load", () => {
       event.preventDefault();
 
     let type = element.dataset.chartType;
+    document.getElementById("chart-title").innerHTML = titles[type];
 
     $.ajax({
         type:"GET",
