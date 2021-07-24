@@ -1,50 +1,24 @@
 <body>
-  <h2> Criteria </h2>
-  <ul>
-    <li> <a href='#' data-chart-type="fname"> First Name </a> </li>
-    <li> <a href='#' data-chart-type="mname"> Middle Initial </a> </li>
-    <li> <a href='#' data-chart-type="lname"> Last Name </a> </li>
-    <li> <a href='#' data-chart-type="prefix"> Prefix </a> </li>
-    <li> <a href='#' data-chart-type="address1" > Address 1 </a> </li>
-    <li> <a href='#' data-chart-type="address2"> Address 2 </a> </li>
-    <li> <a href='#' data-chart-type="city"> City </a> </li>
-    <li> <a href='#' data-chart-type="state"> State </a> </li>
-    <li> <a href='#' data-chart-type="zip"> Zip </a> </li>
-    <li> <a href='#' data-chart-type="education"> Education </a> </li>
-    <li> <a href='#' data-chart-type="income"> Income </a> </li>
-  </ul>
+  <div class="criteria-container"> 
+    <h2 class="criteria-title"> Criteria </h2>
+    <ul class="criteria-list">
+      <li> <a href='#' data-chart-type="fname"> First Name </a> </li>
+      <li> <a href='#' data-chart-type="mname"> Middle Initial </a> </li>
+      <li> <a href='#' data-chart-type="lname"> Last Name </a> </li>
+      <li> <a href='#' data-chart-type="prefix"> Prefix </a> </li>
+      <li> <a href='#' data-chart-type="address1" > Address 1 </a> </li>
+      <li> <a href='#' data-chart-type="address2"> Address 2 </a> </li>
+      <li> <a href='#' data-chart-type="city"> City </a> </li>
+      <li> <a href='#' data-chart-type="state"> State </a> </li>
+      <li> <a href='#' data-chart-type="zip"> Zip </a> </li>
+      <li> <a href='#' data-chart-type="education"> Education </a> </li>
+      <li> <a href='#' data-chart-type="income"> Income </a> </li>
+    </ul>
+  </div>
 
-  <%= pie_chart([])%>
-    
+  <%= pie_chart([])%>    
 </body>
 
-<script> 
-  let chart = Chartkick.charts["chart-1"];
-
-  window.addEventListener("load", () => {
-    const links = document.querySelectorAll(
-      "a[data-chart-type]"
-    );
-
-    links.forEach((element) => {
-      element.addEventListener("click", (event) => {
-        event.preventDefault();
-
-      let type = element.dataset.chartType;
-
-      $.ajax({
-          type:"GET",
-          url:"chart_data/fetchInfo",
-          dataType:"json",
-          data: {type: type},
-          success: function(data) {
-            chart.updateData(data) 
-          }  
-          })     
-      });
-    });
-  }); 
-</script>
 
 
 

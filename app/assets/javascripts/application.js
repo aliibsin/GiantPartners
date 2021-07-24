@@ -13,6 +13,7 @@
 //= require jquery
 //= require chartkick
 //= require Chart.bundle
+//= require handleFetch
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
