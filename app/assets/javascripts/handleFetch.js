@@ -1,7 +1,9 @@
 window.addEventListener("load", () => {
 
   let chart = Chartkick.charts["chart-1"];
-  let titles = {"fname": "First Name", 
+
+  const colors = ["red", "blue", "green", "yellow", "purple"]
+  const titles = {"fname": "First Name", 
                 "mname": "Middle Name",
                 "lname": "Last Name",
                 "prefix": "Prefix",
@@ -31,7 +33,14 @@ window.addEventListener("load", () => {
         dataType:"json",
         data: {type: type},
         success: function(data) {
-          chart.updateData(data) 
+          let chosenColors = []
+          
+          for (let i = 0; i < Object.values(data).length; i++) {
+            chosenColors.push(colors[Math.floor(Math.random() * colors.length)])
+          }
+          let options = {colors: chosenColors, legend: false, dataset: {borderWidth: 1}}
+
+          chart.updateData(data, options)
         }  
         })     
     });
