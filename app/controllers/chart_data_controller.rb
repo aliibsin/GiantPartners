@@ -1,10 +1,10 @@
 class ChartDataController < ApplicationController
-
+  # for view
   def index 
     render :index
   end
 
-
+  # custom route to pull columns from database and alters format to match chartkick input
   def fetchInfo
     type = params[:type]
 
