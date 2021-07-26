@@ -7,6 +7,8 @@ This repo is for a coding challenge given by Giant Partners. The live version is
 * Ruby 2.5.1
 * Rails 5.2.6
 * PostgreSQL database
+* jQuery
+* Chartkick w/ Chart.js
 
 
 ### Usage
