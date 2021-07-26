@@ -1,24 +1,17 @@
-# README
+# Giant Partners Coding Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repo is for a coding challenge given by Giant Partners. The live version is hosted [here](https://gp-challenge.herokuapp.com/).
 
-Things you may want to cover:
+### Technologies
 
-* Ruby version
+* Ruby 2.5.1
+* Rails 5.2.6
+* PostgreSQL database
 
-* System dependencies
 
-* Configuration
+### Usage
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Clone the repo
+* Run bundle install
+* Run bundle exec rails s
+* Go to the localhost specified by the server log
